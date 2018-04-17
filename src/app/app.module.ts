@@ -4,11 +4,23 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
+import { HomePageComponent } from './componentes/home-page/home-page.component';
+import { NavBarComponent } from './componentes/nav-bar/nav-bar.component';
+import { RegisterPageComponent } from './componentes/register-page/register-page.component';
+import { LoginPageComponent } from './componentes/login-page/login-page.component';
+import { PrivatePageComponent } from './componentes/private-page/private-page.component';
+import { NoFoundPageComponent } from './componentes/no-found-page/no-found-page.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomePageComponent,
+    NavBarComponent,
+    RegisterPageComponent,
+    LoginPageComponent,
+    PrivatePageComponent,
+    NoFoundPageComponent
   ],
   imports: [
     BrowserModule,
