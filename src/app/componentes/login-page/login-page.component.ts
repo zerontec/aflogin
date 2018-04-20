@@ -19,6 +19,7 @@ export class LoginPageComponent implements OnInit {
   ngOnInit() {
   }
 
+  //login con email
 onSubmitLogin() {
   this.authService.loginEmail(this.email, this.password)
   .then((res) => {
@@ -33,15 +34,37 @@ onSubmitLogin() {
 
 
 }
-
+//loguearse con google
 
 onClickGoogleLogin() {
 this.authService.loginGoogle()
+
 .then((res) => {
+this.flashMesaje.show('Usuarios logueado Correctamente', {cssClass: 'alert-success', timeout:4000})
 this.router.navigate(['/private']);
 
 
-}).catch(err => console.log(err.message));
+}).catch((err) => {
+  this.flashMesaje.show(err.message, {cssClass: 'alert-danger', timeout:4000})
+  console.log(err);
+  this.router.navigate(['/login']);
+});
+
 
 }
+
+onClickFacebookLogin(){
+this.authService.loginFacebook()
+.then((res) => {
+   this.flashMesaje.show('Usuarios logueado Correctamente', {cssClass: 'alert-success', timeout:4000})
+  this.router.navigate(['/private']);
+})
+
+.catch((err) => {
+  this.flashMesaje.show(err.message, {cssClass: 'alert-danger', timeout:4000})
+  console.log(err);
+  this.router.navigate(['/login']);
+});
+}
+
 }
