@@ -34,4 +34,14 @@ onSubmitLogin() {
 
 }
 
+
+onClickGoogleLogin() {
+this.authService.loginGoogle()
+.then((res) => {
+this.router.navigate(['/private']);
+
+
+}).catch(err => console.log(err.message));
+
+}
 }
